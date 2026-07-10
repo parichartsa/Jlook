@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS tours (
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS reservations (
@@ -63,27 +64,27 @@ INSERT IGNORE INTO `tours` (`id`, `name`, `city`, `price_yen`, `available_seats`
 (24, 'Snorkeling & Diving Tour', 'Okinawa', 5000, 32, 'Plunge beneath the surface of Okinawa\'s legendary coral seas and discover a world of jaw-dropping marine beauty. This expertly guided snorkeling and introductory diving tour takes you to vibrant coral gardens teeming with tropical fish, sea turtles, and dazzling underwater color. Full equipment provided, beginners warmly welcome — no experience needed to fall in love with the ocean.'),
 (25, 'Okinawa World Culture Park', 'Okinawa', 5000, 50, 'Explore 5,000 years of Ryukyu culture at Okinawa World — a fascinating open-air park featuring a traditional village, live Eisa dance performances, venomous snake shows, and the spectacular Gyokusendo Cave, one of Japan\'s longest limestone caverns. Hands-on, educational, and genuinely entertaining, this is the most immersive way to understand Okinawa\'s unique and captivating heritage.');
 
-INSERT IGNORE INTO users (name, email) VALUES
-('Akari Takahashi', 'akari.t@example.com'),
-('Aoi Ito', 'aoi.ito@example.com'),
-('Haruto Watanabe', 'haruto.w@example.com'),
-('Hina Takahashi', 'hina.takahashi@example.com'),
-('Hinata Tanaka', 'hinata.tanaka@example.com'),
-('Hiroshi Kobayashi', 'hiroshi.k@example.com'),
-('Kaito Yamada', 'kaito.yamada@example.com'),
-('Kenji Tanaka', 'kenji.tanaka@example.com'),
-('Mai Sato', 'mai.sato@example.com'),
-('Mio Shimizu', 'mio.shimizu@example.com'),
-('Ren Yamamoto', 'ren.yamamoto@example.com'),
-('Riku Hayashi', 'riku.hayashi@example.com'),
-('Ryota Kato', 'ryota.kato@example.com'),
-('Sakura Yoshida', 'sakura.y@example.com'),
-('Sota Ito', 'sota.ito@example.com'),
-('Takumi Inoue', 'takumi.i@example.com'),
-('Yui Suzuki', 'yui.suzuki@example.com'),
-('Yuki Mori', 'yuki.mori@example.com'),
-('Yuma Kimura', 'yuma.kimura@example.com'),
-('Yuna Nakamura', 'yuna.nakamura@example.com');
+INSERT IGNORE INTO users (name, email, password) VALUES
+('Akari Takahashi', 'akari.t@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Aoi Ito', 'aoi.ito@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Haruto Watanabe', 'haruto.w@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Hina Takahashi', 'hina.takahashi@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Hinata Tanaka', 'hinata.tanaka@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Hiroshi Kobayashi', 'hiroshi.k@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Kaito Yamada', 'kaito.yamada@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Kenji Tanaka', 'kenji.tanaka@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Mai Sato', 'mai.sato@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Mio Shimizu', 'mio.shimizu@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Ren Yamamoto', 'ren.yamamoto@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Riku Hayashi', 'riku.hayashi@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Ryota Kato', 'ryota.kato@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Sakura Yoshida', 'sakura.y@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Sota Ito', 'sota.ito@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Takumi Inoue', 'takumi.i@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Yui Suzuki', 'yui.suzuki@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Yuki Mori', 'yuki.mori@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Yuma Kimura', 'yuma.kimura@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5'),
+('Yuna Nakamura', 'yuna.nakamura@example.com', '$2b$12$e0MYNfXqGgW1zM2K7B3uO.8hYf9hF6e7rC8tV9uW0xY1zZ2a3b4c5');
 
 INSERT IGNORE INTO reservations (id, tour_id, user_id, reservation_date, number_of_guests, total_price_yen) VALUES
 (1, 1, 8, '2025-07-01', 2, 46000),
